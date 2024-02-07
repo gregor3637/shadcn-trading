@@ -18,7 +18,7 @@ export default function Sidebar({ className }) {
   return (
     <nav
       className={cn(
-        `relative hidden h-screen border-r pt-20 md:block`,
+        `relative hidden h-screen border-r pt-20 sm:block`,
         status && "duration-500",
         isOpen ? "w-72" : "w-[78px]",
         className

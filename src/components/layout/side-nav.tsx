@@ -1,32 +1,10 @@
-import { LayoutDashboard } from "lucide-react";
-import { useEffect, useState } from "react";
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import SideNavItem from "./side-nav-item";
 
-export function SideNav({ items, className, isOpen }) {
+export function SideNav({ items, className }) {
   return (
     <nav className="space-y-2">
       {items.map((item) => {
-        return (
-          <a
-            key={item.title}
-            href={item.href}
-            className={cn(
-              buttonVariants({ variant: "ghost" }),
-              "group relative flex h-12 justify-start"
-            )}
-          >
-            <item.icon className={cn("h-5 w-5", item.color)} />
-            <span
-              className={cn(
-                "absolute left-12 text-base duration-200",
-                className
-              )}
-            >
-              {item.title}
-            </span>
-          </a>
-        );
+        return <SideNavItem {...item} key={item.title} className={className} />;
       })}
     </nav>
   );
