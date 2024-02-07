@@ -18,7 +18,7 @@ export default function Sidebar({ className }) {
   return (
     <nav
       className={cn(
-        `relative hidden h-screen border-r pt-20 sm:block`,
+        `relative hidden h-screen border-r sm:block `,
         status && "duration-500",
         isOpen ? "w-72" : "w-[78px]",
         className
@@ -31,9 +31,7 @@ export default function Sidebar({ className }) {
         )}
         onClick={handleToggle}
       />
-      <div className="space-y-4 py-4">
-        <div className="px-3 py-2">
-          <div className="mt-3 space-y-1">
+      <div className="space-y-4 py-10 px-4 h-full ">
             <SideNav
               items={NavItems}
               className={`${
@@ -42,8 +40,6 @@ export default function Sidebar({ className }) {
                   : "text-background opacity-0 transition-all duration-300 group-hover:z-50 group-hover:ml-4 group-hover:rounded group-hover:bg-foreground group-hover:p-2 group-hover:opacity-100"
               }`}
             />
-          </div>
-        </div>
       </div>
     </nav>
   );

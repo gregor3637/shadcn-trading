@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "../ui/button";
 
-function SideNavItem({ title, href, color, className, icon: Icon }) {
+function SideNavNavigation({ title, href, color, className, icon: Icon }) {
   return (
     <a
       key={title}
@@ -21,4 +21,4 @@ function SideNavItem({ title, href, color, className, icon: Icon }) {
   );
 }
 
-export default SideNavItem;
+export default SideNavNavigation;

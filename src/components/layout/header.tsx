@@ -2,7 +2,7 @@ import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Container from "@/components/ui/container";
 import { NavItems } from "@/components/constants/side-nav";
-import SideNavItem from "./side-nav-item";
+import SideNavNavigation from "./side-nav-navigation";
 
 const Header = () => {
   return (
@@ -17,7 +17,7 @@ const Header = () => {
               <SheetContent side="left" className="w-[300px] ">
                 <nav className="flex flex-col gap-4 mt-10">
                   {NavItems.map((item) => (
-                    <SideNavItem
+                    <SideNavNavigation
                       {...item}
                       key={item.title}
                       className="block px-2 py-1 text-lg"
