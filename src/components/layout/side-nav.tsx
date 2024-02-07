@@ -1,9 +1,9 @@
 import { LayoutDashboard } from "lucide-react";
-
-import { cn } from "@/lib/utils";
+import { useEffect, useState } from "react";
 import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
-export function SideNav({ items, className }) {
+export function SideNav({ items, className, isOpen }) {
   return (
     <nav className="space-y-2">
       {items.map((item) => {
@@ -17,7 +17,12 @@ export function SideNav({ items, className }) {
             )}
           >
             <item.icon className={cn("h-5 w-5", item.color)} />
-            <span className={cn("absolute left-12 text-base duration-200")}>
+            <span
+              className={cn(
+                "absolute left-12 text-base duration-200",
+                className
+              )}
+            >
               {item.title}
             </span>
           </a>
