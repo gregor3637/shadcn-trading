@@ -40,3 +40,64 @@
 .read-the-docs {
   color: #888;
 }
+
+.investment-card-active {
+  background: radial-gradient(
+      80.36% 80.36% at 18.95% 26.51%,
+      #60dbff 0.56%,
+      #60d5ff 9.37%,
+      #5fc4ff 21.1%,
+      #5da9ff 34.46%,
+      #5a82ff 49.03%,
+      #5751ff 64.42%,
+      #5643ff 68.44%,
+      #563df8 74.32%,
+      #552ee5 82.82%,
+      #5315c6 92.87%,
+      #5200ab 100%
+  );
+  background-size: 150% 150%;
+  animation: none;
+  position: relative;
+}
+
+.investment-card-closed {
+  background: radial-gradient(
+      80.36% 80.36% at 18.95% 26.51%,
+      #b4b4b4 0.56%,
+      #b4b4b4 9.37%,
+      #b4b4b4 21.1%,
+      #b4b4b4 34.46%,
+      #b4b4b4 49.03%,
+      #b4b4b4 64.42%,
+      #b4b4b4 68.44%,
+      #b4b4b4 74.32%,
+      #b4b4b4 82.82%,
+      #b4b4b4 92.87%,
+      #b4b4b4 100%
+  );
+  background-size: 150% 150%;
+  animation: none;
+  position: relative;
+}
+
+.ribbon {
+  z-index: 20;
+  --f: 10px;
+  --r: 0px;
+  --t: 56px;
+
+  position: absolute;
+  inset: var(--t) calc(-1 * var(--f)) auto auto;
+  padding: 0 10px var(--f) calc(10px + var(--r));
+  clip-path: polygon(
+      0 0,
+      100% 0,
+      100% calc(100% - var(--f)),
+      calc(100% - var(--f)) 100%,
+      calc(100% - var(--f)) calc(100% - var(--f)),
+      0 calc(100% - var(--f)),
+      var(--r) calc(50% - var(--f) / 2)
+  );
+  box-shadow: 0 calc(-1 * var(--f)) 0 inset #0005;
+}
