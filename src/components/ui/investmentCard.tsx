@@ -30,7 +30,7 @@ const InvestmentCard = ({
 }) => {
     return (
         <div
-            className={`${isActive ? 'investment-card-active cursor-pointer' : 'investment-card-closed'}  2xs:w-[300] relative flex min-h-[240px] min-w-[200px]  max-w-[600px] flex-col justify-between rounded-lg p-3 shadow-sm
+            className={`${isActive ? 'investment-card-active cursor-pointer' : 'investment-card-closed'}  2xs:w-[300] relative flex min-h-[200px] min-w-[200px]  max-w-[600px] flex-col justify-between rounded-lg p-3 shadow-sm
             2xs:bg-red-500
         
             `}

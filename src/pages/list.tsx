@@ -52,7 +52,31 @@ const investments = [
     value: "40000",
   },
   {
-    id: "6",
+    id: "7",
+    type: "Stocks",
+    status: "active",
+    date: "03/02/2023",
+    name: "mr. Powell gamble",
+    value: "60000",
+  },
+  {
+    id: "8",
+    type: "Property",
+    status: "active",
+    date: "03/02/2023",
+    name: "Bubble of all bubbles",
+    value: "300000",
+  },
+  {
+    id: "9",
+    type: "Cash",
+    status: "active",
+    date: "03/02/2023",
+    name: "Printer goes Brrr",
+    value: "40000",
+  },
+  {
+    id: "10",
     type: "Stocks",
     status: "active",
     date: "03/02/2023",
@@ -64,10 +88,10 @@ const investments = [
 const List = () => {
   return (
     <div className="space-y-4">
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {investments.map((item) => (
-          <Card className="rounded-lg border-2 bg-red-500">
-            <CardContent className="pt-4 bg-blue-300">
+          <Card className="rounded-lg border-2">
+            <CardContent className="p-0">
               <InvestmentCard
                 isActive={item.status === "active"}
                 status={<InvestmentCard.Status status={item.status} />}

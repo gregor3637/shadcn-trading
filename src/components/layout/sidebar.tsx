@@ -13,12 +13,12 @@ export default function Sidebar() {
   return (
     <nav
       className={cn(
-        `relative hidden h-screen border-r sm:block `,
+        ` hidden h-screen border-r sm:block fixed`,
         status && "duration-500",
         isOpen ? "w-72" : "w-[78px]"
       )}
     >
-      <div className="space-y-4 py-10 px-4 h-full ">
+      <div className="space-y-4 px-4 h-full ">
         <SideNav
           items={NavItems}
           className={`${

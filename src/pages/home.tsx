@@ -4,11 +4,19 @@ import { Plus } from "lucide-react";
 import List from "./list";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { useSelector } from "react-redux";
+import { selectNavMenu } from "@/services/store/reducers/navMenuSlice";
 
 export default function Home() {
+  const { isOpen, status } = useSelector(selectNavMenu);
+
   return (
     // <Container>
-      <div className="bg-red-400 p-10">
+      <div className={cn(
+        ` p-10 flex-1`,
+        status && "duration-500",
+        isOpen ? "ml-72" : "ml-[78px]"
+      )}>
         <Card className="rounded-lg border-2">
           <CardHeader className="border-b-2 py-4">
             <CardTitle className="text-start text-3xl flex justify-between items-center">

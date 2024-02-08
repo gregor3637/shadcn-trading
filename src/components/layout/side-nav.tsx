@@ -3,7 +3,7 @@ import SideNavFooter from "./side-nav-footer";
 
 export function SideNav({ items, className }) {
   return (
-    <div className="space-y-2 flex justify-between flex-col h-full">
+    <div className=" flex justify-between flex-col h-full py-10 ">
       <nav>
         {items.map((item) => {
           return (
