@@ -1,45 +1,32 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import useSidebar from "@/hooks/useSidebar";
 import { SideNav } from "@/components/layout/side-nav";
 import { NavItems } from "@/components/constants/side-nav";
 import { BsArrowLeftShort } from "react-icons/bs";
+import { useSelector } from "react-redux";
 import { cn } from "@/lib/utils";
+import { selectNavMenu } from "@/services/store/reducers/navMenuSlice";
 
-export default function Sidebar({ className }) {
-  const { isOpen, toggle } = useSidebar();
-  const [status, setStatus] = useState(false);
-
-  const handleToggle = () => {
-    setStatus(true);
-    toggle();
-    setTimeout(() => setStatus(false), 500);
-  };
+export default function Sidebar() {
+  const { isOpen, status } = useSelector(selectNavMenu);
 
   return (
     <nav
       className={cn(
         `relative hidden h-screen border-r sm:block `,
         status && "duration-500",
-        isOpen ? "w-72" : "w-[78px]",
-        className
+        isOpen ? "w-72" : "w-[78px]"
       )}
     >
-      <BsArrowLeftShort
-        className={cn(
-          "absolute -right-3 top-20 cursor-pointer rounded-full border bg-arrow text-3xl text-foreground",
-          !isOpen && "rotate-180"
-        )}
-        onClick={handleToggle}
-      />
       <div className="space-y-4 py-10 px-4 h-full ">
-            <SideNav
-              items={NavItems}
-              className={`${
-                isOpen
-                  ? ""
-                  : "text-background opacity-0 transition-all duration-300 group-hover:z-50 group-hover:ml-4 group-hover:rounded group-hover:bg-foreground group-hover:p-2 group-hover:opacity-100"
-              }`}
-            />
+        <SideNav
+          items={NavItems}
+          className={`${
+            isOpen
+              ? ""
+              : "text-background opacity-0 transition-all duration-300 group-hover:z-50 group-hover:ml-4 group-hover:rounded group-hover:bg-foreground group-hover:p-2 group-hover:opacity-100"
+          }`}
+        />
       </div>
     </nav>
   );

@@ -3,8 +3,12 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Container from "@/components/ui/container";
 import { NavItems } from "@/components/constants/side-nav";
 import SideNavNavigation from "./side-nav-navigation";
+import { useTheme } from "next-themes";
+import SideNavButton from "./side-nav-button";
 
 const Header = () => {
+  const { theme, setTheme } = useTheme();
+
   return (
     <header className="block sm:hidden  py-3 px-4 border-b">
       <Container>
@@ -14,7 +18,10 @@ const Header = () => {
               <SheetTrigger>
                 <Menu className="h-6 md:hidden w-6" />
               </SheetTrigger>
-              <SheetContent side="left" className="w-[300px] ">
+              <SheetContent
+                side="left"
+                className="w-[300px] flex flex-col  justify-between h-full"
+              >
                 <nav className="flex flex-col gap-4 mt-10">
                   {NavItems.map((item) => (
                     <SideNavNavigation
@@ -24,6 +31,12 @@ const Header = () => {
                     />
                   ))}
                 </nav>
+                <SideNavButton
+                  className={"className"}
+                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                >
+                  <SideNavButton.Theme theme={theme} isExpanded={true} />
+                </SideNavButton>
               </SheetContent>
             </Sheet>
             <a href="" className="ml-4 lg:ml-0">
